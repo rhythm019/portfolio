@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>using vue 3</title>
+    <!-- including vue library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.30/dist/vue.global.prod.js"></script>
+    <style>
+      html,
+      body {
+        background: rgb(235, 231, 170);
+      }
+      h1 {
+        color: rgb(130, 11, 81);
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app1">
+      <h1>FEEDBACK</h1>
+      <!-- taking input using v-model -->
+      <p>ENTER YOUR NAME</p>
+      <input type="text" v-model="inputText" placeholder="enter text" />
+      <p>YOUR NAME: {{inputText}}</p>
+
+      <!-- using v-if and v-else -->
+      <button @click="showoption=!showoption">OPTION</button>
+      <h2 v-if="showoption">You liked my portfolio !!</h2>
+      <h2 v-else>Oh No you don't !!</h2>
+
+      <!-- using v-show -->
+      <h3 v-show="display">HEY THERE</h3>
+
+      <!-- using v-if with v-for -->
+      <p>Here is a list of projects I have done so far</p>
+      <ol>
+        <li v-for="(material,indexnumber) in materials" :key="indexnumber">
+          {{material.name}}
+          <span v-if="material.isgood">(html,css & js)</span>
+        </li>
+      </ol>
+      <br />
+      <!-- using v-for  -->
+      <p>Here is the list of awards I have</p>
+      <ol>
+        <li v-for="(award,index) in awards" :key="count">{{award}}</li>
+      </ol>
+    </div>
+
+    <!-- initializing vue -->
+    <script>
+      const app1 = Vue.createApp({
+        data() {
+          return {
+            inputText: "",
+            showoption: true,
+            display: true,
+            materials: [
+              { name: "lifeline", isgood: true },
+              { name: "clime peaker", isgood: false },
+              { name: "job application", isgood: true },
+              { name: "to-do list", isgood: false },
+            ],
+            awards: [
+              "Mathematician of Karnal",
+              "WIEHACK 4.0",
+              "Cisco Cybersecurity",
+              "Tata virtual",
+            ],
+          };
+        },
+      });
+      app1.mount("#app1");
+    </script>
+  </body>
+</html>

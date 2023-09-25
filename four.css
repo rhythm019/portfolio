@@ -1,0 +1,54 @@
+/* default styles  */
+body {
+  background: rgb(183, 36, 98);
+  background: linear-gradient(
+    0deg,
+    rgba(183, 36, 98, 1) 0%,
+    rgba(226, 215, 76, 1) 100%
+  );
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+header {
+  background-color: #6f1130;
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+  padding: 20px 0;
+}
+
+/* main section */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* project container */
+.project {
+  text-align: center;
+  color: #ebcd53;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid #160707;
+  border-radius: 5px;
+}
+
+/* e project images */
+.project img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*  project titles */
+.project h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
